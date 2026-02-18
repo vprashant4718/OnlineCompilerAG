@@ -2,6 +2,7 @@
 import type { ReactNode } from "react"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
+import Navbar from "@/components/Navbar"
 
 interface RootLayoutProps {
   children: ReactNode
@@ -19,6 +20,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
             enableSystem
             disableTransitionOnChange
           >
+
+             <Navbar />
+            
             {children}
           </ThemeProvider>
         </body>

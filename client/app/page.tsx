@@ -5,7 +5,6 @@ import Terminal from "@/components/Terminal";
 import Sidebar from "@/components/Sidebar";
 import { useCompiler } from "@/hooks/useCompiler";
 import Editor from "@/components/Editor";
-import Navbar from "@/components/Navbar";
 
 export default function Home() {
   const [language, setLanguage] = useState("python");
@@ -17,9 +16,7 @@ export default function Home() {
   return (
     <div className="h-screen flex flex-col">
 
-      <Navbar
-        onRun={() => runCode(language, code)}
-      />
+    
 
       <div className="flex flex-1 overflow-hidden">
 
@@ -34,6 +31,7 @@ export default function Home() {
               language={language}
               value={code}
               onChange={setCode}
+              onRun={() => runCode(language, code)} 
             />
           </div>
 

@@ -3,13 +3,9 @@
 import { useTheme } from "next-themes";
 import { Sun, Moon, Fullscreen, Minimize } from "lucide-react";
 import { useEffect, useState } from "react";
-import { ModeToggle } from "./Toggle-Theme";
 
-interface NavbarProps {
-  onRun: () => void;
-}
 
-export default function Navbar({ onRun }: NavbarProps) {
+export default function Navbar() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -66,13 +62,7 @@ export default function Navbar({ onRun }: NavbarProps) {
           {isFullscreen ? <Minimize size={18} /> : <Fullscreen size={18} />}
         </button>
 
-        {/* Run */}
-        <button
-          onClick={onRun}
-          className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-1.5 rounded text-sm"
-        >
-          Run Code
-        </button>
+        
       </div>
     </div>
   );

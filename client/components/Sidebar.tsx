@@ -20,7 +20,7 @@ const languages = [
 export default function Sidebar({ language, setLanguage }: SidebarProps) {
   return (
     <div className=" bg-gray-200 dark:bg-gray-900 
-  w-16 flex flex-col items-center py-4 space-y-4
+  w-16 flex flex-col items-center py-4 space-y-4 px-2
 ">
       {languages.map((lang) => (
         <a href={`/${lang.id}`} target="_blank"
